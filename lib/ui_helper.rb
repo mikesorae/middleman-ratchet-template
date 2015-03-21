@@ -10,6 +10,11 @@ class UIHelper < Middleman::Extension
       btn += " btn-outlined" if outline
       "<a class='#{btn}' href='#{url}'>#{text}</a>"
     end
+    def ui_switch(on: false)
+      toggle = "toggle"
+      toggle += " active" if on
+      "<div class='#{toggle}'><div class='toggle-handle'></div></div>"
+    end
   end
 end
 

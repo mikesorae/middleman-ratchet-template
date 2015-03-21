@@ -37,3 +37,14 @@ header.bar.bar-nav
       li.table-view-cell
         = button.name
         = ui_button button.name, "#", type: button.type, outline: true
+
+  ul.table-view
+    li.table-view-divider
+      | switches
+    li.table-view-cell
+      | on
+      = ui_switch on: true
+    li.table-view-cell
+      | off
+      = ui_switch
+
