@@ -62,10 +62,17 @@ after_configuration do
     bower_dir = "bower_components"
   end
 
-  Dir.glob(File.join("#{root}", bower_dir, "*", "fonts")) do |f|
-    sprockets.append_path f
-  end
   sprockets.append_path File.join "#{root}", bower_dir
+
+  # find fonts files to import font assets
+  Dir.glob(File.join("#{root}", bower_dir, "*", "fonts", "*")) do |f|
+    asset_path = Pathname.new(f).relative_path_from(Pathname.new(File.join(root, bower_dir)))
+    # import font files and relocate the output path
+    sprockets.import_asset asset_path do |path|
+      org_path = Pathname.new(path)
+      "fonts/#{org_path.basename}"
+    end
+  end
 end
 
 # Build-specific configuration
