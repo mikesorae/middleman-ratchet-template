@@ -1,5 +1,8 @@
 ---
 title: index
+pages:
+  - name: UI Samples
+    url: ui_sample.html
 ---
 
 header.bar.bar-nav
@@ -7,7 +10,6 @@ header.bar.bar-nav
 
 .content
   ul.table-view
-    - 1.upto 3 do |i|
+    - current_page.data.pages.each do |page|
       li.table-view-cell
-        = "item#{i}"
-        button.btn.btn-primary button
+        a.navigate-right[href=page.url]= page.name
