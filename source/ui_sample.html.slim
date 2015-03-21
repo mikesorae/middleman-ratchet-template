@@ -3,12 +3,25 @@ title: UI Sample
 buttons:
   - name: normal button
     type: ""
+    outline: false
   - name: primary button
-    type: "btn-primary"
+    type: btn-primary
+    outline: false
   - name: positive button
-    type: "btn-positive"
+    type: btn-positive
+    outline: false
   - name: negative button
-    type: "btn-negative"
+    type: btn-negative
+    outline: false
+  - name: primary button
+    type: btn-primary
+    outline: true
+  - name: positive button
+    type: btn-positive
+    outline: true
+  - name: negative button
+    type: btn-negative
+    outline: true
 ---
 
 header.bar.bar-nav
@@ -19,4 +32,4 @@ header.bar.bar-nav
     - current_page.data.buttons.each do |button|
       li.table-view-cell
         = button.name
-        = ui_button button.name, "#", button.type
+        = ui_button button.name, "#", type: button.type, outline: button.outline
