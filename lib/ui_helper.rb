@@ -4,8 +4,10 @@ class UIHelper < Middleman::Extension
   end
 
   helpers do
-    def make_a_link(url, text)
-      "<a href='#{url}'>#{text}</a>"
+    def ui_button(text, url="", type="")
+      btn = "btn"
+      btn += " #{type}" if type.present?
+      "<a class='#{btn}' href='#{url}'>#{text}</a>"
     end
   end
 end

@@ -1,9 +1,22 @@
 ---
 title: UI Sample
+buttons:
+  - name: normal button
+    type: ""
+  - name: primary button
+    type: "btn-primary"
+  - name: positive button
+    type: "btn-positive"
+  - name: negative button
+    type: "btn-negative"
 ---
 
 header.bar.bar-nav
   h1.title= current_page.data.title
 
 .content
-  = make_a_link "hoge", "fuga"
+  ul.table-view
+    - current_page.data.buttons.each do |button|
+      li.table-view-cell
+        = button.name
+        = ui_button button.name, "#", button.type
