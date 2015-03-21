@@ -54,7 +54,17 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 after_configuration do
-  sprockets.append_path File.join("#{root}", "bower_components")
+  begin
+    @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+    bower_dir = @bower_config["directory"]
+  rescue
+    bower_dir = "bower_components"
+  end
+
+  Dir.glob(File.join("#{root}", bower_dir, "*", "fonts")) do |f|
+    sprockets.append_path f
+  end
+  sprockets.append_path File.join "#{root}", bower_dir
 end
 
 # Build-specific configuration
