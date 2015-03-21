@@ -5,3 +5,9 @@ title: index
 header.bar.bar-nav
   h1.title= current_page.data.title
 
+.content
+  ul.table-view
+    - 1.upto 3 do |i|
+      li.table-view-cell
+        = "item#{i}"
+        button.btn.btn-primary button
