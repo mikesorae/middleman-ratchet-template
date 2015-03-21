@@ -70,6 +70,8 @@ end
 
 # Build-specific configuration
 configure :build do
+  Slim::Engine.set_default_options :pretty => true
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
