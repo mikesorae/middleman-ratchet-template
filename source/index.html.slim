@@ -12,4 +12,4 @@ header.bar.bar-nav
   ul.table-view
     - current_page.data.pages.each do |page|
       li.table-view-cell
-        a.navigate-right[href=page.url]= page.name
+        a.navigate-right[href=page.url data-transition="slide-in"]= page.name
