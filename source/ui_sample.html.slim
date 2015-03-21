@@ -9,15 +9,6 @@ buttons:
     type: positive
   - name: negative button
     type: negative
-outlined_buttons:
-  - name: normal button
-    type: ""
-  - name: primary button
-    type: primary
-  - name: positive button
-    type: positive
-  - name: negative button
-    type: negative
 badges:
   - name: normal
     number: 1
@@ -46,7 +37,7 @@ header.bar.bar-nav
         = ui_button button.name, "#", type: button.type
     li.table-view-divider
       | outlined buttons
-    - current_page.data.outlined_buttons.each do |button|
+    - current_page.data.buttons.each do |button|
       li.table-view-cell
         = button.name
         = ui_button button.name, "#", type: button.type, outline: true
