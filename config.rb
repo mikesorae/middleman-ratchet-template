@@ -1,7 +1,5 @@
 require "lib/ui_helper.rb"
 
-activate :ui_helper
-
 ###
 # Compass
 ###
@@ -36,8 +34,7 @@ activate :ui_helper
 # Helpers
 ###
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :ui_helper
 
 # Reload the browser automatically whenever files change
 configure :development do
