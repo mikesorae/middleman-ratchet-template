@@ -1,3 +1,7 @@
+require "lib/ui_helper.rb"
+
+activate :ui_helper
+
 ###
 # Compass
 ###
