@@ -1,0 +1,15 @@
+---
+title: UI Segment
+---
+
+header.bar.bar-nav
+  a.icon.icon-left-nav.pull-left[href="/" data-transition="slide-out"]
+  h1.title
+    = current_page.data.title
+
+.content
+  ul.table-view
+    li.table-view-divider
+      | segmented control
+    li.table-view-cell
+      = ui_segment %w(one two three), selected: 2

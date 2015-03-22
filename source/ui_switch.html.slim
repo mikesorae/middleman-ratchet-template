@@ -1,0 +1,21 @@
+---
+title: UI Switch
+---
+
+header.bar.bar-nav
+  a.icon.icon-left-nav.pull-left[href="/" data-transition="slide-out"]
+  h1.title
+    = current_page.data.title
+
+.content
+  ul.table-view
+    li.table-view-divider
+      | switches
+    li.table-view-cell
+      | on
+      = ui_switch on: true
+    li.table-view-cell
+      | off
+      = ui_switch
+
+

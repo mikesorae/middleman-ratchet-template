@@ -1,0 +1,33 @@
+---
+title: UI Button
+buttons:
+  - name: normal button
+    type: ""
+  - name: primary button
+    type: primary
+  - name: positive button
+    type: positive
+  - name: negative button
+    type: negative
+---
+
+header.bar.bar-nav
+  a.icon.icon-left-nav.pull-left[href="/" data-transition="slide-out"]
+  h1.title
+    = current_page.data.title
+
+.content
+  ul.table-view
+    li.table-view-divider
+      | standard buttons
+    - current_page.data.buttons.each do |button|
+      li.table-view-cell
+        = button.name
+        = ui_button button.name, "#", type: button.type
+    li.table-view-divider
+      | outlined buttons
+    - current_page.data.buttons.each do |button|
+      li.table-view-cell
+        = button.name
+        = ui_button button.name, "#", type: button.type, outline: true
+

@@ -1,0 +1,37 @@
+---
+title: UI Badge
+badges:
+  - name: normal
+    number: 1
+    type: ""
+  - name: primary badge
+    number: 1
+    type: primary
+  - name: positive badge
+    number: 1
+    type: positive
+  - name: negative badge
+    number: 1
+    type: negative
+---
+
+header.bar.bar-nav
+  a.icon.icon-left-nav.pull-left[href="/" data-transition="slide-out"]
+  h1.title
+    = current_page.data.title
+
+.content
+  ul.table-view
+    li.table-view-divider
+      | badges
+    - current_page.data.badges.each do |badge|
+      li.table-view-cell
+        = badge.name
+        = ui_badge badge.number, type: badge.type
+    li.table-view-divider
+      | inverted badges
+    - current_page.data.badges.each do |badge|
+      li.table-view-cell
+        = badge.name
+        = ui_badge badge.number, type: badge.type, invert: true
+
