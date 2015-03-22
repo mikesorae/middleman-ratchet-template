@@ -23,6 +23,18 @@ class UIHelper < Middleman::Extension
       badge += " badge-inverted" if invert
       "<span class='#{badge}'>#{number}</span>"
     end
+
+    def ui_segment(items, selected: 0)
+      html = "<div class='segmented-control'>"
+
+      items.each_with_index do |item, index|
+        klass = "control-item"
+        klass += " active" if index == selected
+        html += "<a class='#{klass}'>#{item}</a>"
+      end
+
+      html += "</div>"
+    end
   end
 end
 
