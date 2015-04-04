@@ -17,17 +17,17 @@ header.bar.bar-nav
     = current_page.data.title
 
 .content
-  ul.table-view
+  = ui_table_view
     li.table-view-divider
       | standard buttons
     - current_page.data.buttons.each do |button|
-      li.table-view-cell
+      = ui_table_view_cell
         = button.name
         = ui_button button.name, "#", type: button.type
     li.table-view-divider
       | outlined buttons
     - current_page.data.buttons.each do |button|
-      li.table-view-cell
+      = ui_table_view_cell
         = button.name
         = ui_button button.name, "#", type: button.type, outline: true
 

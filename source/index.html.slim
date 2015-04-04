@@ -15,7 +15,7 @@ header.bar.bar-nav
   h1.title= current_page.data.title
 
 .content
-  ul.table-view
+  = ui_table_view
     - current_page.data.pages.each do |page|
-      li.table-view-cell
+      = ui_table_view_cell
         a.navigate-right[href=page.url data-transition="slide-in"]= page.name

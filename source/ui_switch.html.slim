@@ -8,13 +8,13 @@ header.bar.bar-nav
     = current_page.data.title
 
 .content
-  ul.table-view
+  = ui_table_view
     li.table-view-divider
       | switches
-    li.table-view-cell
+    = ui_table_view_cell
       | on
       = ui_switch on: true
-    li.table-view-cell
+    = ui_table_view_cell
       | off
       = ui_switch
 

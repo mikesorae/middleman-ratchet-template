@@ -8,8 +8,8 @@ header.bar.bar-nav
     = current_page.data.title
 
 .content
-  ul.table-view
+  = ui_table_view
     li.table-view-divider
       | segmented control
-    li.table-view-cell
+    = ui_table_view_cell
       = ui_segment %w(one two three), selected: 2
