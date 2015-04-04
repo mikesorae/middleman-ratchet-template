@@ -47,6 +47,12 @@ class UIHelper < Middleman::Extension
       html += yield
       html += "</li>"
     end
+
+    def ui_table_view_divider
+      html = "<li class='table-view-cell table-view-divider'>"
+      html += yield
+      html += "</li>"
+    end
   end
 end
 

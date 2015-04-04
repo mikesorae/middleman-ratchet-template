@@ -22,13 +22,13 @@ header.bar.bar-nav
 
 .content
   = ui_table_view
-    li.table-view-divider
+    = ui_table_view_divider
       | badges
     - current_page.data.badges.each do |badge|
       = ui_table_view_cell
         = badge.name
         = ui_badge badge.number, type: badge.type
-    li.table-view-divider
+    = ui_table_view_divider
       | inverted badges
     - current_page.data.badges.each do |badge|
       = ui_table_view_cell

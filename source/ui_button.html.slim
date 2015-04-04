@@ -18,13 +18,13 @@ header.bar.bar-nav
 
 .content
   = ui_table_view
-    li.table-view-divider
+    = ui_table_view_divider
       | standard buttons
     - current_page.data.buttons.each do |button|
       = ui_table_view_cell
         = button.name
         = ui_button button.name, "#", type: button.type
-    li.table-view-divider
+    = ui_table_view_divider
       | outlined buttons
     - current_page.data.buttons.each do |button|
       = ui_table_view_cell
